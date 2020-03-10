@@ -17,7 +17,7 @@
 FROM gcr.io/oss-fuzz-base/base-builder
 MAINTAINER dvyukov@google.com
 
-RUN git clone --depth 1 https://github.com/curl/curl.git /src/curl
+RUN git clone --depth 1 https://github.com/Leo-Neat/curl.git /src/curl
 RUN git clone --depth 1 https://github.com/curl/curl-fuzzer.git /src/curl_fuzzer
 
 # Use curl-fuzzer's scripts to get latest dependencies.
