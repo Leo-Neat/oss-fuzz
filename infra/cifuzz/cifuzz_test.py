@@ -360,6 +360,18 @@ class GetLatestCoverageReportUnitTest(unittest.TestCase):
     self.assertIsNone(cifuzz.get_latest_cov_report_info('not-a-proj'))
     self.assertIsNone(cifuzz.get_latest_cov_report_info(''))
 
+class GetLatestCoverageReportIntegrationTest(unittest.TestCase):
+  """Test get_latest_cov_report_info function in the cifuzz module."""
+
+  def test_get_valid_project(self):
+    """Tests that a project's coverage report can be downloaded and parsed.
+
+    NOTE: This test relies on the test_project repo's coverage report.
+    Example was not used because it has no coverage reports.
+    """
+    report = cifuzz.get_latest_cov_report_info('curl')
+    print(report)
+
 
 class KeepAffectedFuzzersUnitTest(unittest.TestCase):
   """Test the keep_affected_fuzzer method in the CIFuzz module."""
