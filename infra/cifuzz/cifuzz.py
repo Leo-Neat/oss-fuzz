@@ -352,7 +352,7 @@ def remove_unaffected_fuzzers(project_name, out_dir, files_changed,
     files_changed: A list of files changed compared to HEAD.
     src_in_docker: The location of the source dir in the docker image.
   """
-	logging.info('Starting to remove affected fuzzers')
+  logging.info('Starting to remove affected fuzzers')
   if not files_changed:
     logging.info('No files changed compared to HEAD.')
     return
@@ -360,12 +360,12 @@ def remove_unaffected_fuzzers(project_name, out_dir, files_changed,
   if not fuzzer_paths:
     logging.error('No fuzzers found in out dir.')
     return
-	logging.info('Getting last coverage report.')
+  logging.info('Getting last coverage report.')
   latest_cov_report_info = get_latest_cov_report_info(project_name)
   if not latest_cov_report_info:
     logging.error('Could not download latest coverage report.')
     return
-	logging.info('Got last coverage report.')
+  logging.info('Got last coverage report.')
   affected_fuzzers = []
   for fuzzer in fuzzer_paths:
     covered_files = get_files_covered_by_target(latest_cov_report_info,
